@@ -1,0 +1,44 @@
+// SYNTAX REFERENCE
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	module := "function basics"
+	author := "mriganka paul"
+
+	fmt.Println(converter(module, author))
+}
+
+func converter(module, author string) (s1, s2 string) {
+	module = strings.Title(module)
+	author = strings.ToUpper(author)
+
+	return module, author
+}
+
+// variadic functions
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	bestFinish := bestLeagueFinishes(13, 10, 13, 17, 14, 16, 7, 5, 2)
+	fmt.Println(bestFinish)
+}
+
+func bestLeagueFinishes(finishes ...int) int { 
+	best := finishes[0]
+	for _, i := range finishes { // Gotcha syntax
+		if i < best {
+			best = i
+		}
+	}
+
+	return best
+}

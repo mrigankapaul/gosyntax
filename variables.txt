@@ -1,0 +1,30 @@
+// VARIABLES SYNTAX REFERENCE
+
+import (
+	"fmt"
+	"reflect"
+)
+
+// var (
+// 	// name, course string
+// 	// module       float64
+// 	// name, course, module = "Nigel", "Docker Deep Dive", 3.2 // type inference
+// 	name   = "Nigel"
+// 	course = "Docker Deep Dive"
+// 	module = 3.2
+// )
+
+func main() {
+	name := "Nigel"
+	course := "Docker Deep Dive"
+	module := 3.2
+	// fmt.Println("Hello World from", runtime.GOOS)
+	fmt.Println("Name is set to", name, "and is of type", reflect.TypeOf(name))
+	fmt.Println("Course is set to", course, "and is of type", reflect.TypeOf(course))
+	fmt.Println("Module is set to", module, "and is of type", reflect.TypeOf(module))
+	// a := 10.0000000
+	// b := 3
+	// fmt.Println("\nA is type", reflect.TypeOf(a), " and B is of type", reflect.TypeOf(b))
+	// c := int(a) + b
+	// fmt.Println("\nC has value:", c, "and is of type:", reflect.TypeOf(c))
+}

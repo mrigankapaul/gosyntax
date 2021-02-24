@@ -1,0 +1,46 @@
+Arrays 
+    - Numbered List of a single type.
+    - Fixed Length
+Slices
+    - Numbered List of a single type.
+    - Can be resized.
+    - are references. Passed by references.
+
+	// declaration make(<type>, <len>, <capacity>)
+	myCourses := make([]string, 5, 10)
+	fmt.Println(myCourses) 
+	fmt.Printf("Length is:%d. \nCapacity is:%d", len(myCourses), cap(myCourses))
+
+	myCourses := []string{"Docker", "Puppet", "Python"}
+
+	mySlice := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	fmt.Println(mySlice[4])
+	mySlice[1] = 0
+	fmt.Print(mySlice)
+
+	sliceOfSlice := mySlice[2:5]
+	fmt.Println(sliceOfSlice)
+	sliceOfSlice = mySlice[:5]
+	fmt.Println(sliceOfSlice)
+	sliceOfSlice = mySlice[2:]
+	fmt.Println(sliceOfSlice)
+
+	mySlice := make([]int, 1, 4)
+	fmt.Printf("Length is: %d, Capacity id %d", len(mySlice), cap(mySlice))
+
+	for i := 1; i < 17; i++ {
+		mySlice = append(mySlice, i)
+		fmt.Printf("\nCapacity is: %d", cap(mySlice))
+	}
+
+	mySlice := []int{1, 2, 3, 4, 5}
+	fmt.Println(mySlice)
+	for _, i := range mySlice {
+		fmt.Println("for range loop:", i)
+	}
+
+	newSlice := []int{10, 20, 30}
+	mySlice = append(mySlice, newSlice...) // appending two slices.
+	fmt.Println(mySlice)
+
+

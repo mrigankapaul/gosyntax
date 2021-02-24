@@ -1,0 +1,36 @@
+// SYNTAX REFERENCE
+package main
+
+// SYNTAX REFERENCE
+import (
+	"fmt"
+)
+
+func main() {
+	name := "Mriganka"
+	course := "Docker Deep Dive"
+
+	fmt.Println("\nHi ", name, "U r currently watching ", course)
+	changeCourse(&course)
+	fmt.Println("\nHi ", name, "U r currently watching ", course)
+
+}
+
+func changeCourse(course *string) string {
+	*course = "Docker Clustering"
+	return *course
+}
+
+// environment VARIABLES
+
+import (
+	"fmt"
+	"os"
+)
+
+func main() {
+
+	for _, env := range os.Environ() {
+		fmt.Println(env)
+	}
+}

@@ -1,0 +1,45 @@
+Concurrency - Composition of independently executing processes. Dealing with lots of things at once.
+Parallelism - is the simultaneous execution of (possibly related) computations. Doing lots of things at once.
+goroutines - are scheduled by go runtimes.
+    - Light weight
+    - Go manages go routines
+    - Less switching
+    - Faster starter time
+    - Safe computations using channels.
+Concurrency model:
+    Actor model
+    Communicating Sequential Processes (CSP)
+
+// Non-conurrent program
+func main() {
+	func() {
+		time.Sleep(5 * time.Second)
+		fmt.Println("Hello")
+	}()
+	
+	func() {
+		fmt.Println("Mriganka")
+	}()
+
+}
+
+// old wine in new bottle - seems like coroutines.
+
+	runtime.GOMAXPROCS(2)
+	var waitGrp sync.WaitGroup
+	waitGrp.Add(2)
+
+	go func() {
+		defer waitGrp.Done()
+
+		time.Sleep(5 * time.Second)
+		fmt.Println("Hello")
+	}()
+
+	go func() {
+		defer waitGrp.Done()
+
+		fmt.Println("Mriganka")
+	}()
+
+	waitGrp.Wait()

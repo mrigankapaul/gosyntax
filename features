@@ -1,0 +1,24 @@
+Only ~25 keywords.
+Cross Platform.
+Strongly typed language.
+Supports type inference.
+Produces compiled code.
+
+// package main - Telling the compiler to compile this as an executable and not as a shared library.
+// func main - Entry point and only for executables.
+// if we want to export a member of a package then it needs to start with Captilized Letter.
+// go variables are statically typed.
+// package level variables are global in scope.
+// variables declared at function level must be used.
+// Go passes arguments by value.
+
+// variables
+Uninitialized variables get a zero value.
+Package level variables are global.
+Package level variables must be declared with var.
+Declare function variables with :=
+& References a pointer (Memory Address).
+* De-References a pointer.
+Go Supports type inference.
+Go passes arguments by value.
+

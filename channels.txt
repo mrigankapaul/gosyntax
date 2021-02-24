@@ -1,0 +1,2 @@
+myChannel := make(chan int) // un-buffered channel
+myChannel := make(chan int, 5) // buffered channel
